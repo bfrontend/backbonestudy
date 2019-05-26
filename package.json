@@ -1,0 +1,24 @@
+{
+  "name": "backbonestudy",
+  "version": "1.0.0",
+  "description": "Explain profound theories in simple language Backbone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webxmsj/backbonestudy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webxmsj/backbonestudy/issues"
+  },
+  "homepage": "https://github.com/webxmsj/backbonestudy#readme",
+  "dependencies": {
+    "backbone": "^1.4.0",
+    "underscore": "^1.9.1",
+    "zepto": "^1.2.0"
+  }
+}
