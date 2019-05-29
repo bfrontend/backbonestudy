@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>backbone events</title>
+</head>
+<body>
+  <script src="../node_modules/zepto/dist/zepto.min.js"></script>
+  <script src="../node_modules/underscore/underscore-min.js"></script>
+  <script src="../node_modules/backbone/backbone-min.js"></script>
+  <script>
+    var Animal = function (name) {
+      this.name = name
+    }
+    _.extend(Animal.prototype, Backbone.Events);
+
+    var dog = new Animal('dog');
+    var cat = new Animal('cat');
+    cat.listenTo(dog, 'run', function(){
+      console.log('run', this)
+    })
+  </script>
+</body>
+</html>
