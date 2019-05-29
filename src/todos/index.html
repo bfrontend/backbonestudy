@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>todos</title>
+  <link rel="stylesheet" href="./todos.css">
+</head>
+<body>
+  <div id="todoapp">
+    <header>
+      <h1>todos </h1>
+      <input type="text" id="new-todo">
+    </header>
+
+    <section id="main">
+      <input type="checkbox" id="toggle-all">
+      <label for="toggle-all">全选</label>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <footer>
+      <a id="clear-completed">清除</a>
+      <div id="todo-count"></div>
+    </footer>
+  </div>
+
+  <div id="instructions">双击修改</div>
+  <script src="../../node_modules/_zepto@1.2.0@zepto/dist/zepto.min.js"></script>
+  <script src="../../node_modules/_underscore@1.9.1@underscore/underscore-min.js"></script>
+  <script src="../../node_modules/_backbone@1.4.0@backbone/backbone-min.js"></script>
+  <script src="./backbone.localStorage.js"></script>
+  <script src="./todos.js"></script>
+  <!-- templates -->
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+      <label><%- title %></label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+  <script type="text/template" id="stats-template">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+  </div>
+</body>
+</html>
